@@ -38,4 +38,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-}
+    //androidx
+    implementation 'com.google.android.material:material:1.1.0' //ViewDataBinding
+
+    //viewModel
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.activity:activity-ktx:1.1.0'
+
+    //koin
+    implementation "org.koin:koin-androidx-viewmodel:2.0.1"}

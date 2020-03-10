@@ -1,4 +1,4 @@
-package com.example.jen_library
+package com.example.jen_library.base
 
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
