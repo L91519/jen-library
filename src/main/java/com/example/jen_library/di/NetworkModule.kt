@@ -1,6 +1,5 @@
 package com.example.jen_library.di
 
-import androidx.databinding.library.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

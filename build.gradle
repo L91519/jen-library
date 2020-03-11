@@ -1,3 +1,15 @@
+buildscript {
+    apply from: 'version.gradle'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -38,24 +50,18 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    //androidx
-    implementation 'com.google.android.material:material:1.1.0' //ViewDataBinding
+    api deps.androidx.core_ktx
+    api deps.androidx.activity_ktx
+    api deps.androidx.material
 
-    //viewModelA
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.activity:activity-ktx:1.1.0'
+    api deps.library.okhttp
+    api deps.library.okhttp_logging_interceptor
 
-    //koin
-    implementation "org.koin:koin-androidx-viewmodel:2.0.1"
+    api deps.library.retrofit
+    api deps.library.retrofit_converter_gson
 
-    //Gson
-    implementation 'com.google.code.gson:gson:2.8.6'
+    api deps.library.gson
 
-    //retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
-    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+    api deps.library.koin_viewmodel
 
-    //okhttp
-    implementation 'com.squareup.okhttp3:okhttp:4.3.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.3.0'
 }
