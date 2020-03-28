@@ -5,12 +5,12 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 
-open class BaseRecyclerView<ITEM, B : ViewDataBinding>(
+open class BaseRecyclerViewAdapter<ITEM, B : ViewDataBinding>(
     @LayoutRes val layoutResId: Int,
     val bindingVariableId: Int? = null
 ) : RecyclerView.Adapter<BaseViewHolder<B>>() {
 
-    private val items = mutableListOf<ITEM>()
+    protected val items = mutableListOf<ITEM>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<B> =
         object : BaseViewHolder<B>(
