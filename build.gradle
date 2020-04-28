@@ -64,6 +64,11 @@ dependencies {
 
     api deps.library.koin_viewmodel
 
-    //kapt 'com.android.databinding:compiler:3.0.1'
+    api deps.library.glide
+
+    api deps.library.ted_permission
+
+    api deps.library.room
+    kapt deps.kapt.room
 
 }
