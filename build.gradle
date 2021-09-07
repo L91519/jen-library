@@ -7,6 +7,10 @@ buildscript {
     apply from: "version.gradle"
     repositories {
         google()
+        maven {
+            url "https://maven.google.com"
+        }
+        jcenter()
     }
 
     dependencies {
@@ -17,7 +21,6 @@ buildscript {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "29.0.3"
 
     defaultConfig {
         minSdkVersion 21
@@ -35,17 +38,14 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
-
-    dataBinding {
-        enabled = true
-    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+
     implementation "androidx.appcompat:appcompat:${versions.appCompat}"
     implementation "androidx.core:core-ktx:${versions.androidx.core_ktx}"
+
     testImplementation "junit:junit:${versions.junit}"
     androidTestImplementation "androidx.test.ext:junit:${versions.test.junit}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${versions.test.espressoCore}"
